@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sviatoslav | FilosOFF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #9d00ff;
+            --secondary: #00d4ff;
+            --bg: #0a0a0a;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .fact-box {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 3px solid var(--secondary);
+            background: rgba(0, 212, 255, 0.1);
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="your-photo.jpg" alt="Sviatoslav" class="profile-img">
+        <p style="margin-bottom: 10px; opacity: 0.7;">To jsem já</p>
+
+        <h1>Sviatoslav <span>/ FilosOFF</span></h1>
+        <p class="subtitle">Student informatiky | 18 let | Česká republika</p>
+        <a href="#about" class="btn">Více o mně</a>
+    </header>
+
+    <section id="about">
+        <h2>O mně</h2>
+        <p>Jsem student informatiky žijící v Česku. Nejsem jen obyčejný student – měním kód v nástroje. Můj přístup je
+            kombinací logiky, charakteru a neustálého posunu vpřed. Pokud se do něčeho pustím, dělám to pořádně, nebo
+            vůbec.</p>
+        <br>
+        <button class="btn" onclick="showFact()">Náhodný fakt</button>
+        <div id="factBox" class="fact-box"></div>
+    </section>
+
+    <section id="skills">
+        <h2>Dovednosti</h2>
+        <div class="grid">
+            <div class="card">Python & JavaScript</div>
+            <div class="card">Arduino & Hardware</div>
+            <div class="card">Cybersecurity Basics</div>
+            <div class="card">React Native</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projekty</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Music Player</h3>
+                <p>Python projekt se zaměřením na čistý zvuk a minimalistické UI.</p>
+            </div>
+            <div class="card">
+                <h3>Voice Assistant</h3>
+                <p>Vlastní digitální asistent pro automatizaci každodenních úkolů.</p>
+            </div>
+            <div class="card">
+                <h3>Arduino Weather System</h3>
+                <p>IoT stanice pro monitoring kvality ovzduší a počasí.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Telegram: @SvS1215</p>
+        <p>SnapChat: @SvS1215</p>
+        <p>Instagram: @moon.man19</p>
+        <p>Email: ssvjat@seznam.cz</p>
+    </section>
+
+    <footer>
+        <p>"This is just the beginning."</p>
+        <p>&copy; 2026 FilosOFF</p>
+    </footer>
+
+    <script>
+        const facts = [
+            "Poslouchám více než 1390 skladeb, hlavně old-school.",
+            "Studuji Computer Science v České republice.",
+            "Můj první velký projekt byl postaven na platformě Arduino.",
+            "V komunikaci si cením přímosti a charakteru.",
+            "Mám rád experimentování a nesnáším nudu."
+        ];
+
+        function showFact() {
+            const factBox = document.getElementById('factBox');
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            factBox.innerText = randomFact;
+            factBox.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
